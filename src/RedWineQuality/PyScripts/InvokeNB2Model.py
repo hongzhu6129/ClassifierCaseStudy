@@ -20,4 +20,5 @@ while True:
     result = model.predict([params])
     print(result[0])
     sys.stdout.flush()
-#print("Program end.")
+print("Python script stopped: ")
+sys.stdout.flush()

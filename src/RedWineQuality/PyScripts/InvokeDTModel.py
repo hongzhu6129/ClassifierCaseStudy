@@ -14,12 +14,11 @@ while True:
     #print("Please enter 10 parameters:")
     iParam = sys.stdin.readline().rstrip()
     if iParam == "":
-		print("Python Script stopped")
-    	sys.stdout.flush()
         break  #end of prediction
     params = [float(s) for s in iParam.split(',')]
     #predict
     result = model.predict([params])
     print(result[0])
     sys.stdout.flush()
-#print("Program end.")
+print("Python script stopped: ")
+sys.stdout.flush()
