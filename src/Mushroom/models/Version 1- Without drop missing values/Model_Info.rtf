@@ -1,0 +1,322 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 ================== RESTART: C:/Morphy/Mushroom/Mushroom_Build_Models.py =================\par
+1. Information of Raw Data:\par
+1.1. Data Head: \par
+  class cap-shape cap-surface  ... spore-print-color population habitat\par
+0     p         x           s  ...                 k          s       u\par
+1     e         x           s  ...                 n          n       g\par
+2     e         b           s  ...                 n          n       m\par
+3     p         x           y  ...                 k          s       u\par
+4     e         x           s  ...                 n          a       g\par
+\par
+[5 rows x 23 columns]\par
+1.2. Data statistaics: \par
+<class 'pandas.core.frame.DataFrame'>\par
+RangeIndex: 8124 entries, 0 to 8123\par
+Data columns (total 23 columns):\par
+ #   Column                    Non-Null Count  Dtype \par
+---  ------                    --------------  ----- \par
+ 0   class                     8124 non-null   object\par
+ 1   cap-shape                 8124 non-null   object\par
+ 2   cap-surface               8124 non-null   object\par
+ 3   cap-color                 8124 non-null   object\par
+ 4   bruises                   8124 non-null   object\par
+ 5   odor                      8124 non-null   object\par
+ 6   gill-attachment           8124 non-null   object\par
+ 7   gill-spacing              8124 non-null   object\par
+ 8   gill-size                 8124 non-null   object\par
+ 9   gill-color                8124 non-null   object\par
+ 10  stalk-shape               8124 non-null   object\par
+ 11  stalk-root                8124 non-null   object\par
+ 12  stalk-surface-above-ring  8124 non-null   object\par
+ 13  stalk-surface-below-ring  8124 non-null   object\par
+ 14  stalk-color-above-ring    8124 non-null   object\par
+ 15  stalk-color-below-ring    8124 non-null   object\par
+ 16  veil-type                 8124 non-null   object\par
+ 17  veil-color                8124 non-null   object\par
+ 18  ring-number               8124 non-null   object\par
+ 19  ring-type                 8124 non-null   object\par
+ 20  spore-print-color         8124 non-null   object\par
+ 21  population                8124 non-null   object\par
+ 22  habitat                   8124 non-null   object\par
+dtypes: object(23)\par
+memory usage: 1.4+ MB\par
+None\par
+1.3. Null data: \par
+class                       0\par
+cap-shape                   0\par
+cap-surface                 0\par
+cap-color                   0\par
+bruises                     0\par
+odor                        0\par
+gill-attachment             0\par
+gill-spacing                0\par
+gill-size                   0\par
+gill-color                  0\par
+stalk-shape                 0\par
+stalk-root                  0\par
+stalk-surface-above-ring    0\par
+stalk-surface-below-ring    0\par
+stalk-color-above-ring      0\par
+stalk-color-below-ring      0\par
+veil-type                   0\par
+veil-color                  0\par
+ring-number                 0\par
+ring-type                   0\par
+spore-print-color           0\par
+population                  0\par
+habitat                     0\par
+dtype: int64\par
+\par
+2. Information after Removed '?' data:\par
+1.2. Data statistaics: \par
+<class 'pandas.core.frame.DataFrame'>\par
+Int64Index: 8124 entries, 0 to 8123\par
+Data columns (total 23 columns):\par
+ #   Column                    Non-Null Count  Dtype \par
+---  ------                    --------------  ----- \par
+ 0   class                     8124 non-null   object\par
+ 1   cap-shape                 8124 non-null   object\par
+ 2   cap-surface               8124 non-null   object\par
+ 3   cap-color                 8124 non-null   object\par
+ 4   bruises                   8124 non-null   object\par
+ 5   odor                      8124 non-null   object\par
+ 6   gill-attachment           8124 non-null   object\par
+ 7   gill-spacing              8124 non-null   object\par
+ 8   gill-size                 8124 non-null   object\par
+ 9   gill-color                8124 non-null   object\par
+ 10  stalk-shape               8124 non-null   object\par
+ 11  stalk-root                8124 non-null   object\par
+ 12  stalk-surface-above-ring  8124 non-null   object\par
+ 13  stalk-surface-below-ring  8124 non-null   object\par
+ 14  stalk-color-above-ring    8124 non-null   object\par
+ 15  stalk-color-below-ring    8124 non-null   object\par
+ 16  veil-type                 8124 non-null   object\par
+ 17  veil-color                8124 non-null   object\par
+ 18  ring-number               8124 non-null   object\par
+ 19  ring-type                 8124 non-null   object\par
+ 20  spore-print-color         8124 non-null   object\par
+ 21  population                8124 non-null   object\par
+ 22  habitat                   8124 non-null   object\par
+dtypes: object(23)\par
+memory usage: 1.5+ MB\par
+None\par
+1.3. Null data: \par
+class                       0\par
+cap-shape                   0\par
+cap-surface                 0\par
+cap-color                   0\par
+bruises                     0\par
+odor                        0\par
+gill-attachment             0\par
+gill-spacing                0\par
+gill-size                   0\par
+gill-color                  0\par
+stalk-shape                 0\par
+stalk-root                  0\par
+stalk-surface-above-ring    0\par
+stalk-surface-below-ring    0\par
+stalk-color-above-ring      0\par
+stalk-color-below-ring      0\par
+veil-type                   0\par
+veil-color                  0\par
+ring-number                 0\par
+ring-type                   0\par
+spore-print-color           0\par
+population                  0\par
+habitat                     0\par
+dtype: int64\par
+\par
+2. Feature preprocessing:\par
+[[5. 2. 4. 1. 6. 1. 0. 1. 4. 0. 3. 2. 2. 7. 7. 0. 2. 1. 4. 2. 3. 5.]\par
+ [5. 2. 9. 1. 0. 1. 0. 0. 4. 0. 2. 2. 2. 7. 7. 0. 2. 1. 4. 3. 2. 1.]\par
+ [0. 2. 8. 1. 3. 1. 0. 0. 5. 0. 2. 2. 2. 7. 7. 0. 2. 1. 4. 3. 2. 3.]\par
+ [5. 3. 8. 1. 6. 1. 0. 1. 5. 0. 3. 2. 2. 7. 7. 0. 2. 1. 4. 2. 3. 5.]\par
+ [5. 2. 3. 0. 5. 1. 1. 0. 4. 1. 3. 2. 2. 7. 7. 0. 2. 1. 0. 3. 0. 1.]]\par
+Index(['cap-shape', 'cap-surface', 'cap-color', 'bruises', 'odor',\par
+       'gill-attachment', 'gill-spacing', 'gill-size', 'gill-color',\par
+       'stalk-shape', 'stalk-root', 'stalk-surface-above-ring',\par
+       'stalk-surface-below-ring', 'stalk-color-above-ring',\par
+       'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number',\par
+       'ring-type', 'spore-print-color', 'population', 'habitat', 'class'],\par
+      dtype='object')\par
+<class 'pandas.core.frame.DataFrame'>\par
+RangeIndex: 8124 entries, 0 to 8123\par
+Data columns (total 23 columns):\par
+ #   Column                    Non-Null Count  Dtype  \par
+---  ------                    --------------  -----  \par
+ 0   cap-shape                 8124 non-null   float64\par
+ 1   cap-surface               8124 non-null   float64\par
+ 2   cap-color                 8124 non-null   float64\par
+ 3   bruises                   8124 non-null   float64\par
+ 4   odor                      8124 non-null   float64\par
+ 5   gill-attachment           8124 non-null   float64\par
+ 6   gill-spacing              8124 non-null   float64\par
+ 7   gill-size                 8124 non-null   float64\par
+ 8   gill-color                8124 non-null   float64\par
+ 9   stalk-shape               8124 non-null   float64\par
+ 10  stalk-root                8124 non-null   float64\par
+ 11  stalk-surface-above-ring  8124 non-null   float64\par
+ 12  stalk-surface-below-ring  8124 non-null   float64\par
+ 13  stalk-color-above-ring    8124 non-null   float64\par
+ 14  stalk-color-below-ring    8124 non-null   float64\par
+ 15  veil-type                 8124 non-null   float64\par
+ 16  veil-color                8124 non-null   float64\par
+ 17  ring-number               8124 non-null   float64\par
+ 18  ring-type                 8124 non-null   float64\par
+ 19  spore-print-color         8124 non-null   float64\par
+ 20  population                8124 non-null   float64\par
+ 21  habitat                   8124 non-null   float64\par
+ 22  class                     8124 non-null   int32  \par
+dtypes: float64(22), int32(1)\par
+memory usage: 1.4 MB\par
+cap-shape                   0\par
+cap-surface                 0\par
+cap-color                   0\par
+bruises                     0\par
+odor                        0\par
+gill-attachment             0\par
+gill-spacing                0\par
+gill-size                   0\par
+gill-color                  0\par
+stalk-shape                 0\par
+stalk-root                  0\par
+stalk-surface-above-ring    0\par
+stalk-surface-below-ring    0\par
+stalk-color-above-ring      0\par
+stalk-color-below-ring      0\par
+veil-type                   0\par
+veil-color                  0\par
+ring-number                 0\par
+ring-type                   0\par
+spore-print-color           0\par
+population                  0\par
+habitat                     0\par
+class                       0\par
+dtype: int64\par
+\par
+3. Set Global Parameters\par
+\par
+3.1. Split data set into train and test sets:\par
+\par
+3.2. Set training and model parameters:\par
+\par
+4. Build Models\par
+\par
+--Logistic Regression(1): Trained on whole data set\par
+Accuracy : 95.876%\par
+Cross-Validation Score : 95.692%\par
+Accuracy on test data = 0.965559655596556\par
+Time = 6.761549711227417\par
+\par
+--Logistic Regression (2): With Train Test Split\par
+Accuracy : 95.842%\par
+Cross-Validation Score : 95.541%\par
+Accuracy on test data = 0.955719557195572\par
+Time = 7.4272074699401855\par
+\par
+--K-Nearest Neighbors (1)\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 95.039%\par
+Accuracy on test data = 0.997539975399754\par
+Time = 7.056277513504028\par
+\par
+--K-Nearest Neighbors (2): with Train Test Split\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 95.801%\par
+Accuracy on test data = 0.95079950799508\par
+Time = 5.870789051055908\par
+\par
+--Decision Tree (1)\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 100.000%\par
+Accuracy on test data = 1.0\par
+Time = 0.4110095500946045\par
+\par
+--Decision Tree (2): with Train Test Split\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 100.000%\par
+Accuracy on test data = 1.0\par
+Time = 0.32999610900878906\par
+\par
+--Random Forest (1)\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 100.000%\par
+Accuracy on test data = 1.0\par
+Time = 11.554126262664795\par
+\par
+--Random Forest (2): Using Train Test Split\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 100.000%\par
+Accuracy on test data = 1.0\par
+Time = 11.308879613876343\par
+\par
+--Naive Bayes model (1)\par
+Accuracy : 92.147%\par
+Cross-Validation Score : 92.159%\par
+Accuracy on test data = 0.9077490774907749\par
+Time = 0.30600643157958984\par
+\par
+--Naive Bayes model (1)\par
+Accuracy : 92.299%\par
+Cross-Validation Score : 92.190%\par
+Accuracy on test data = 0.9089790897908979\par
+Time = 0.2565429210662842\par
+\par
+--Surportting vector machine (1)\par
+Accuracy : 99.237%\par
+Cross-Validation Score : 99.003%\par
+Accuracy on test data = 0.990159901599016\par
+Time = 12.410949230194092\par
+\par
+--Surportting vector machine (2): Using Train Test split\par
+Accuracy : 99.111%\par
+Cross-Validation Score : 98.960%\par
+Accuracy on test data = 0.988929889298893\par
+Time = 10.801592111587524\par
+\par
+--Soft voting (LR+NNN+DT) (1) \par
+Accuracy : 100.000%\par
+Cross-Validation Score : 99.532%\par
+Accuracy on test data = 1.0\par
+Time = 13.875875234603882\par
+\par
+--Soft Voting (LR+NNN+DT) (2): using Train Test Split \par
+Accuracy : 100.000%\par
+Cross-Validation Score : 99.508%\par
+Accuracy on test data = 0.996309963099631\par
+Time = 12.665448665618896\par
+\par
+--Hard Voting\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 98.597%\par
+Accuracy on test data = 0.998769987699877\par
+Time = 14.40254521369934\par
+\par
+--Hard Voting (2): using Train Test Split\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 98.591%\par
+Accuracy on test data = 0.982779827798278\par
+Time = 12.441707849502563\par
+\par
+--Stacking (1) using KNN as Meta: Estimators = lr2, knn2, dtree2, hard_vote2\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 100.000%\par
+Accuracy on test data = 1.0\par
+Time = 127.53650379180908\par
+\par
+--Stacking (2) using Logistic Regression as Meta: Estimators = knn, dtree, soft_vote\par
+Accuracy : 48.203%\par
+Cross-Validation Score : 87.849%\par
+Accuracy on test data = 0.5301353013530136\par
+Time = 171.70933723449707\par
+\par
+--Stacking (3) using Logistic Regression as Meta: estimators = knn2, dtree, soft_vote2),hard_vote2\par
+Accuracy : 100.000%\par
+Cross-Validation Score : 100.000%\par
+Accuracy on Test Set = 1.0\par
+Time = 160.94429993629456\par
+>>> \par
+}
+ 
