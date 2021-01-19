@@ -1,5 +1,7 @@
 package Mushroom;
 
+import MLTestFramework.*;
+
 //Datamorphic Test Specification 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,12 +13,12 @@ import java.util.Random;
 import javax.swing.JFileChooser;
 
 import morphy.annotations.*;  
-public class MushroomMorphisms{
+public class MushroomMorphisms extends MLTest<MushroomValue, Integer> {
 	
 	@TestSetContainer(
 		inputTypeName = "MushroomValue",
 		outputTypeName = "Integer")
-	public TestPool<MushroomValue, Integer> testSuite = new TestPool<MushroomValue, Integer>();
+	public TestPool<MushroomValue, Integer> tSuite = testSuite;
  
 	@MakeSeed
 	public void GenerateRandomTestCases(){	
@@ -629,5 +631,16 @@ public class MushroomMorphisms{
 		}
 		mutant.input = mr;
 		return mutant ;
+	}
+
+	@Override
+	public double distance(TestCase<MushroomValue, Integer> x, TestCase<MushroomValue, Integer> y) {
+		int dist = 0;
+		for (int i=0; i<=21; i++) {
+			if (x.input.value[i]!=y.input.value[i]) {
+				dist++;
+			}
+		}
+		return dist;
 	}
 }
