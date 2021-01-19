@@ -1,0 +1,138 @@
+Python 3.9.1 (tags/v3.9.1:1e5d33e, Dec  7 2020, 17:08:21) [MSC v.1927 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+======== RESTART: C:/Morphy/RedWineQuality/RedWineQuality_BuildModels.py =======
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1599 entries, 0 to 1598
+Data columns (total 12 columns):
+ #   Column                Non-Null Count  Dtype  
+---  ------                --------------  -----  
+ 0   fixed acidity         1599 non-null   float64
+ 1   volatile acidity      1599 non-null   float64
+ 2   citric acid           1599 non-null   float64
+ 3   residual sugar        1599 non-null   float64
+ 4   chlorides             1599 non-null   float64
+ 5   free sulfur dioxide   1599 non-null   float64
+ 6   total sulfur dioxide  1599 non-null   float64
+ 7   density               1599 non-null   float64
+ 8   pH                    1599 non-null   float64
+ 9   sulphates             1599 non-null   float64
+ 10  alcohol               1599 non-null   float64
+ 11  quality               1599 non-null   int64  
+dtypes: float64(11), int64(1)
+memory usage: 150.0 KB
+
+--Logistic Regression(1): Trained on whole data set
+Accuracy : 60.913%
+Cross-Validation Score : 59.659%
+Accuracy on test data = 0.675
+Time = 150.12520170211792
+
+--Logistic Regression (2): With Train Test Split
+Accuracy : 59.903%
+Cross-Validation Score : 59.003%
+Accuracy on test data = 0.65
+Time = 149.21641659736633
+
+--K-Nearest Neighbors (1)
+Accuracy : 100.000%
+Cross-Validation Score : 64.795%
+Accuracy on test data = 0.99375
+Time = 0.4687507152557373
+
+--K-Nearest Neighbors (2): with Train Test Split
+Accuracy : 100.000%
+Cross-Validation Score : 63.515%
+Accuracy on test data = 0.7
+Time = 0.3906261920928955
+
+--Decision Tree (1)
+Accuracy : 79.800%
+Cross-Validation Score : 61.288%
+Accuracy on test data = 0.85
+Time = 0.2812478542327881
+
+--Decision Tree (2): with Train Test Split
+Accuracy : 100.000%
+Cross-Validation Score : 61.364%
+Accuracy on test data = 0.625
+Time = 0.2812464237213135
+
+--Random Forest (1)
+Accuracy : 69.168%
+Cross-Validation Score : 61.229%
+Accuracy on test data = 0.76875
+Time = 35.81570839881897
+
+--Random Forest (2): Using Train Test Split
+Accuracy : 69.771%
+Cross-Validation Score : 60.807%
+Accuracy on test data = 0.70625
+Time = 34.546037435531616
+
+--Naive Bayes model (1)
+Accuracy : 56.473%
+Cross-Validation Score : 54.787%
+Accuracy on test data = 0.60625
+Time = 0.14999794960021973
+
+--Naive Bayes model (2): using Train Test Split
+Accuracy : 55.525%
+Cross-Validation Score : 53.162%
+Accuracy on test data = 0.58125
+Time = 0.16000008583068848
+
+--Surportting vector machine (1)
+Accuracy : 51.032%
+Cross-Validation Score : 50.406%
+Accuracy on test data = 0.60625
+Time = 4.126319169998169
+
+--Surportting vector machine (2): Using Train Test split
+Accuracy : 49.896%
+Cross-Validation Score : 49.544%
+Accuracy on test data = 0.60625
+Time = 3.4702250957489014
+
+--Soft voting (LR+NNN+DT) (1) 
+Accuracy : 94.371%
+Cross-Validation Score : 65.226%
+Accuracy on test data = 0.93125
+Time = 160.2510666847229
+
+--Soft Voting (LR+NNN+DT) (2): using Train Test Split 
+Accuracy : 93.398%
+Cross-Validation Score : 64.070%
+Accuracy on test data = 0.71875
+Time = 151.6797263622284
+
+--Hard Voting
+Accuracy : 86.304%
+Cross-Validation Score : 65.040%
+Accuracy on test data = 0.875
+Time = 152.99926829338074
+
+--Hard Voting (2): using Train Test Split
+Accuracy : 86.101%
+Cross-Validation Score : 63.870%
+Accuracy on test data = 0.675
+Time = 151.2754521369934
+
+--Stacking (1) using KNN as Meta: Estimators = lr2, knn2, dtree2, hard_vote2
+Accuracy : 95.761%
+Cross-Validation Score : 66.784%
+Accuracy on test data = 0.69375
+Time = 1596.1465604305267
+
+--Stacking (2) using Logistic Regression as Meta: Estimators = knn, dtree, soft_vote
+Accuracy : 88.555%
+Cross-Validation Score : 63.785%
+Accuracy on test data = 0.85
+Time = 3168.730623483658
+
+--Stacking (3) using Logistic Regression as Meta: estimators = knn2, dtree, soft_vote2),hard_vote2
+Accuracy : 95.066%
+Cross-Validation Score : 65.884%
+Accuracy on Test Set = 0.6875
+Time = 1725.27055478096
+>>> 
