@@ -1,5 +1,7 @@
 package BankChurners;
 
+import MLTestFramework.*;
+
 //Datamorphic Test Specification 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,12 +13,12 @@ import java.util.Random;
 import javax.swing.JFileChooser;
 
 import morphy.annotations.*;  
-public class BankChurnersMorphisms{
+public class BankChurnersMorphisms extends MLTest<BankChurnersValue, Integer>{
 	
 	@TestSetContainer(
 		inputTypeName = "BankChurnersValue",
 		outputTypeName = "Integer")
-	public TestPool<BankChurnersValue, Integer> testSuite = new TestPool<BankChurnersValue, Integer>();
+	public TestPool<BankChurnersValue, Integer> tSuite = testSuite;
  
 	@MakeSeed
 	public void GenerateRandomTestCases(){	
@@ -466,5 +468,23 @@ public class BankChurnersMorphisms{
 		}
 		mutant.input = bc;
 		return mutant ;
+	}
+
+	@Override
+	public double distance(TestCase<BankChurnersValue, Integer> x, TestCase<BankChurnersValue, Integer> y) {
+		double dist = 0; 
+		for (int i = 0; i<5; i++) {
+			if (x.input.discValue[i] != y.input.discValue[i]) {dist++;}
+		};
+		for (int i=0; i<11; i++) {
+			dist += Math.abs(x.input.intValue[i] - y.input.intValue[i])
+					/(BankChurnersFeatures.intUpper[i]-BankChurnersFeatures.intLower[i]);
+		};
+		for (int i=0; i<3; i++) {
+			dist += Math.abs(x.input.realValue[i] - y.input.realValue[i])
+					/(BankChurnersFeatures.realUpper[i]-BankChurnersFeatures.realLower[i]);
+		}
+//		System.out.println("Distance = "+ dist);
+		return dist;
 	}
 }
