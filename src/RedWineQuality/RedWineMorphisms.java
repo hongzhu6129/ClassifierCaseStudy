@@ -1,5 +1,7 @@
 package RedWineQuality;
 
+import MLTestFramework.*;
+
 //Datamorphic Test Specification 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,19 +13,19 @@ import java.util.Random;
 import javax.swing.JFileChooser;
 
 import morphy.annotations.*;  
-public class RedWineMorphisms{
+public class RedWineMorphisms extends MLTest<RedWineFeatures, Integer>{
 	
 	@TestSetContainer(
 		inputTypeName = "RedWineFeatures",
 		outputTypeName = "Integer")
-	public TestPool<RedWineFeatures, Integer> testSuite = new TestPool<RedWineFeatures, Integer>();
+	public TestPool<RedWineFeatures, Integer> tSuite = testSuite;
  
 	@MakeSeed
 	public void GenerateRandomTestCases(){	
 		Random randomGenerator = new Random();
 		TestCase<RedWineFeatures, Integer> tc;
 		for (int i=0; i<100;i++){
-			tc = new TestCase<RedWineFeatures, Integer>();;
+			tc = new TestCase<RedWineFeatures, Integer>();
 			RedWineFeatures rw = new RedWineFeatures();
 			rw.fixedAcidity = randomGenerator.nextDouble()*12 +4.0;
 			rw.volatileAcidity = randomGenerator.nextDouble()*2;
@@ -518,5 +520,22 @@ public class RedWineMorphisms{
 		rw.alcohol = (seed1.input.alcohol+seed2.input.alcohol)/2;
 		mutant.input = rw;
 		return mutant ;
+	}
+
+	@Override
+	public double distance(TestCase<RedWineFeatures, Integer> x, TestCase<RedWineFeatures, Integer> y) {
+			double dist = 0; 
+			dist += Math.abs(x.input.fixedAcidity - y.input.fixedAcidity); 
+			dist += Math.abs(x.input.volatileAcidity - y.input.volatileAcidity); 
+			dist += Math.abs(x.input.citricAcid - y.input.citricAcid); 
+			dist += Math.abs(x.input.residualSugar - y.input.residualSugar); 
+			dist += Math.abs(x.input.chlorides - y.input.chlorides); 
+			dist += Math.abs(x.input.freeSulfurDioxide - y.input.freeSulfurDioxide); 
+			dist += Math.abs(x.input.totalSulfurDioxide - y.input.totalSulfurDioxide); 
+			dist += Math.abs(x.input.density - y.input.density); 
+			dist += Math.abs(x.input.pH - y.input.pH); 
+			dist += Math.abs(x.input.sulphates - y.input.sulphates); 
+			dist += Math.abs(x.input.alcohol - y.input.alcohol); 
+			return dist;
 	}
 }
